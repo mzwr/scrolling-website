@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: linear-gradient(#200016, #10001f);
+  height: 100vh;
+  font-family: system-ui;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+header{
+  position: fixed;
+  width: 95%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+header .logo{
+  font-size: 30px;
+  margin: 8px;
+}
+header ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+header ul li{
+  margin-right: 30px;
+}
+header ul li a{
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+header ul li a:hover, .active{
+  background-color: white;
+  color: #200016;
+}
+.main{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.main::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(to top, #200016, transparent);
+}
+.main img{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+#moon{
+  mix-blend-mode: screen;
+  transform: translateY(80px);
+}
+.abdesslem{
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  transform: translateY(-140px);
+}
+.content{
+  color: white;
+  padding: 30px;
+}
+.content h2{
+  margin: 20px;
+  font-size: 30px;
+}
+.content p{
+  margin: 20px;
+}
+.bars{
+  display: none;
+}
+
+@media (max-width: 700px){
+  header ul{
+    position: absolute;
+    top: 100%;
+    right: 5%; 
+    left: 5%;
+    background-color: white;
+    flex-direction: column;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: 0.4s;
+  }
+  header ul li{
+    width: 100%;
+    padding: 10px;
+    margin-right: 0px;
+    text-align: center;
+  }
+  header ul li:hover{
+    background-color: #200016;
+  }
+  header ul li:hover a{
+    color: white;
+  }
+  header ul li:hover .active{
+    background-color: #200016;
+    color: white;
+  }
+  header ul li a{
+    padding: 0px;
+    border-radius: 20px;
+    color: #200016;
+  }
+  header ul li a:hover{
+    background-color: #200016;
+    color: white;
+  } 
+  .bars{
+    display: block;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+  }
+  .move{ 
+    transform: translateY(0);
+    opacity: 1; 
+  } 
+  header h2 img{
+    height: 30px;
+    width: 100px;
+  }
+  header{
+    margin: 0;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
